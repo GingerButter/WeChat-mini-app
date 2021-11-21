@@ -1,0 +1,8 @@
+<view class="container">
+<form>
+<view class="title"><text class="checkin">签退打卡（输入工号）</text></view>
+<view><input model:value="{{id}}" class="id"/></view>
+<view><button bindtap="insert" class="userButton" type="primary">提交</button></view>
+<view><text class="myMessage">{{myMessage}}</text></view>
+</form>
+</view>

@@ -1,0 +1,23 @@
+package cn.edu.uibe.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import cn.edu.uibe.dao.checkinMapper;
+import cn.edu.uibe.domain.checkin;
+import cn.edu.uibe.service.checkinService;
+
+public class checkinServiceImpl implements checkinService{
+	
+	@Autowired
+	checkinMapper checkinMapper;
+	
+	@Override
+	public int insertCheckin(checkin c) {
+		return checkinMapper.insert(c);
+	}
+
+}

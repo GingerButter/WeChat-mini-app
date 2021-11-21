@@ -1,0 +1,23 @@
+<!--pages/member/member.wxml-->
+<view class="container">
+<form>
+  <view class="myphone_text">
+    <text >根据手机号查询</text>
+  </view>
+  <view>
+  <input class="myphone_num" type="number" model:value="{{phone}}"/>
+  </view>
+  <view>
+    <button class="my_button" type="primary" bindtap="mysearch">查询</button>
+  </view>
+  </form>
+  <view class="my_message">
+    <text>{{message}}</text>
+  </view>
+  <view wx:if="{{flag}}">
+    <text>姓名:{{name}}</text>
+  </view>
+  <view wx:if="{{flag}}">
+    <text>余额:{{credits}}</text>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/home/home.wxml-->
+
+<view class="container">
+  <view>
+    <text  class="mytitle">欣欣美容美发</text>
+  </view>
+  <view>
+    <image class="myimage" src="http://cs.uibe.edu.cn/imgs/uibeweb010.jpg"></image>
+  </view>
+  <view>
+    <navigator class="mynav" url="../member/member">会员管理</navigator>
+  </view>
+  <view style="margin-top:15px;font-size:12px;">
+    <text>联系方式:惠新东街10号</text>
+  </view>
+</view>
+

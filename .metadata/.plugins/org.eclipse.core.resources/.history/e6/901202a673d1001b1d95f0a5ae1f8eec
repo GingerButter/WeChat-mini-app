@@ -1,0 +1,5 @@
+package cn.edu.uibe.service;
+
+public interface checkinService {
+
+}

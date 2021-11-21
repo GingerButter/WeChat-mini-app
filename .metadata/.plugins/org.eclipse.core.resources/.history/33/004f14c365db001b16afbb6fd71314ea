@@ -1,0 +1,57 @@
+package cn.edu.uibe.controller;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import cn.edu.uibe.domain.checkinKey;
+import cn.edu.uibe.domain.checkoutKey;
+import cn.edu.uibe.service.checkinService;
+import cn.edu.uibe.service.checkoutService;
+
+@Controller
+public class retrieveController {
+	
+	@Autowired 
+    checkinService inSer;
+	@Autowired
+	checkoutService outSer;
+	
+	@RequestMapping("/retrieve")
+	String[] retrieveRecord(@RequestParam(defaultValue="") String id,
+			@RequestParam(defaultValue="") String inputTime) {
+		String[] ret = new String[4];
+		SimpleDateFormat time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String[] tt = inputTime.split("-");
+		System.out.println(tt[0]);
+		System.out.println(tt[1]);
+		System.out.println(tt[2]);
+		Date newDate = new Date();
+		newDate.setDate(Integer.parseInt(tt[2]));
+		newDate.setMonth(Integer.parseInt(tt[1]));
+		newDate.setYear(Integer.parseInt(tt[0]));
+		System.out.println(newDate);
+		checkinKey inKey = new checkinKey();
+		inKey.setCheckindate(newDate);
+		inKey.setId(Long.parseLong(id));
+		checkoutKey outKey = new checkoutKey();
+		outKey.setCheckoutdate(newDate);
+		outKey.setId(Long.parseLong(id));
+		Date intime = inSer.getCheckinTime(inKey);
+		Date outtime = outSer.getCheckoutTime(outKey);
+		ret[0] = time.format(intime);
+		ret[2] = time.format(outtime);
+		if (inSer.isLate(intime)) ret[1] = "迟到";
+		else ret[1] = " 正常";
+		if (outSer.isLate(outtime)) ret[3] = "加班";
+		else ret[3] = "正常";
+		//String j = "{\"intime\":\""+ret[0]+"\",\"inst\":\""+ret[1]+"\",\"outtime\":\""+ret[2]+"\",\"outst\":\""+ret[3]+"\"}";
+		//JSONObject jsonObj = JSON.parseObject(j);
+		return ret;
+	}
+
+}

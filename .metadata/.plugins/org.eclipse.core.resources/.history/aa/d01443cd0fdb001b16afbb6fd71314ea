@@ -1,0 +1,18 @@
+package cn.edu.uibe.service;
+
+import java.util.Date;
+
+import cn.edu.uibe.domain.checkinKey;
+import cn.edu.uibe.domain.checkout;
+
+public interface checkoutService {
+	
+	int insertCheckout(checkout c);
+	
+	Date getCheckoutTime(checkinKey k);
+	
+	String timeToString(Date d);
+	
+	boolean isLate(Date d);
+
+}

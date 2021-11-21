@@ -1,0 +1,11 @@
+package cn.edu.uibe.service;
+
+import cn.edu.uibe.dao.checkinMapper;
+import cn.edu.uibe.domain.checkin;
+
+public interface checkinService {
+	
+	int insertCheckin(checkin c);
+
+}
+

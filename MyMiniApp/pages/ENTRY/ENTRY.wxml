@@ -1,0 +1,9 @@
+<!--pages/ENTRY/ENTRY.wxml-->
+<view class="title">
+  <text>员工考勤系统</text>
+</view>
+
+<view class="button"><button type = "default" bindtap="goToCheckIn">上班打卡</button></view>
+<view class="button"><button type = "default" bindtap="goToCheckOut">下班打卡</button></view>
+<view class="button"><button type = "default" bindtap="goToRetrieve">记录查询</button></view>
+

@@ -1,0 +1,46 @@
+package cn.edu.uibe.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import cn.edu.uibe.dao.checkinMapper;
+import cn.edu.uibe.domain.checkin;
+import cn.edu.uibe.domain.checkinKey;
+import cn.edu.uibe.service.checkinService;
+
+@Service
+@Transactional
+
+public class checkinServiceImpl implements checkinService{
+	
+	@Autowired
+	checkinMapper checkinMapper;
+	
+	@Override
+	public int insertCheckin(checkin c) {
+		return checkinMapper.insert(c);
+	}
+
+	@Override
+	public Date retCheckinTime(checkinKey k) {
+		return checkinMapper.selectCheckinTime(k);
+	}
+
+	@Override
+	public String timeToString(Date d) {
+		SimpleDateFormat dd=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return dd.format(d);
+	}
+
+	@SuppressWarnings("deprecation")
+	@Override
+	public boolean isLate(Date d) {
+		if (d.getHours()>9) return true;
+		else return false;
+	}
+
+}

@@ -1,0 +1,15 @@
+<!--pages/retrieve/retrieve.wxml-->
+
+<view class="title"><text>签到记录查询</text></view>
+<view><input model:value="{{id}}" class="id"></input></view>
+<view class="label"><text>工号</text></view>
+<view><input model:value="{{inputTime}}" class="id"></input></view>
+<view class="label"><text>时间（以年-月-日形式输入）</text></view>
+<view class="title"><text>查询结果</text></view>
+<view><input model:value="{{inTime}}" class="result"/></view>
+<view><input model:value="{{inst}}" class="result"/></view>
+<view><input model:value="{{outTime}}" class="result"/></view>
+<view><input model:value="{{outst}}" class="result"/></view>
+<view class="button">
+  <button bindtap="retrieve" class="userButton" type="primary">提交</button>
+</view>

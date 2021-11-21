@@ -1,0 +1,39 @@
+package cn.edu.uibe.service.impl;
+
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import cn.edu.uibe.dao.checkoutMapper;
+import cn.edu.uibe.domain.checkinKey;
+import cn.edu.uibe.domain.checkout;
+import cn.edu.uibe.service.checkoutService;
+
+public class checkoutServiceImpl implements checkoutService{
+
+	@Autowired
+	checkoutMapper checkoutMapper;
+	
+	@Override
+	public int insertCheckout(checkout c) {
+		return checkoutMapper.insert(c);
+	}
+
+	@Override
+	public Date getCheckoutTime(checkinKey k) {
+		// TODO Auto-generated method stub
+		return checkoutMapper.selectCheckoutTime(k);
+	}
+
+	@Override
+	public String timeToString(Date d) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isLate(Date d) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

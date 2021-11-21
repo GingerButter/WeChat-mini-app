@@ -1,0 +1,18 @@
+package cn.edu.uibe.dao;
+
+import cn.edu.uibe.domain.checkin;
+import cn.edu.uibe.domain.checkinKey;
+
+public interface checkinMapper {
+    int deleteByPrimaryKey(checkinKey key);
+
+    int insert(checkin record);
+
+    int insertSelective(checkin record);
+
+    checkin selectByPrimaryKey(checkinKey key);
+
+    int updateByPrimaryKeySelective(checkin record);
+
+    int updateByPrimaryKey(checkin record);
+}

@@ -1,0 +1,12 @@
+127.0.0.1 - - [02/Jul/2021:21:22:18 +0800] "GET / HTTP/1.1" 404 700
+0:0:0:0:0:0:0:1 - - [02/Jul/2021:21:22:24 +0800] "GET /consume HTTP/1.1" 404 707
+0:0:0:0:0:0:0:1 - - [02/Jul/2021:21:22:29 +0800] "GET /myapp/consume HTTP/1.1" 400 841
+0:0:0:0:0:0:0:1 - - [02/Jul/2021:21:22:42 +0800] "GET /myapp/allusers HTTP/1.1" 500 10762
+0:0:0:0:0:0:0:1 - - [02/Jul/2021:21:22:52 +0800] "GET /myapp/checkin/insert?id=1 HTTP/1.1" 500 3901
+0:0:0:0:0:0:0:1 - - [02/Jul/2021:21:25:57 +0800] "GET /myapp/checkin/insert?id=1 HTTP/1.1" 500 3901
+0:0:0:0:0:0:0:1 - - [02/Jul/2021:21:29:19 +0800] "GET /myapp/checkin/insert?id=1 HTTP/1.1" 200 37
+0:0:0:0:0:0:0:1 - - [02/Jul/2021:21:31:31 +0800] "GET /myapp/checkin/insert?id=1 HTTP/1.1" 500 13564
+0:0:0:0:0:0:0:1 - - [02/Jul/2021:21:31:49 +0800] "GET /myapp/checkin/insert?id=1 HTTP/1.1" 500 13564
+0:0:0:0:0:0:0:1 - - [02/Jul/2021:21:31:50 +0800] "GET /myapp/checkin/insert?id=1 HTTP/1.1" 500 13564
+0:0:0:0:0:0:0:1 - - [02/Jul/2021:21:31:50 +0800] "GET /myapp/checkin/insert?id=1 HTTP/1.1" 500 13564
+0:0:0:0:0:0:0:1 - - [02/Jul/2021:22:35:02 +0800] "GET /myapp/checkout/insert?id=2 HTTP/1.1" 200 37

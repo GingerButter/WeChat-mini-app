@@ -1,0 +1,10 @@
+<!--pages/myuser/user.wxml-->
+
+<view class="container">
+<form>
+<view><text>报名</text></view>
+<view><input model:value="{{userName}}" class="userName"/></view>
+<view><button bindtap="myfunc" class="userButton" type="primary">提交</button></view>
+<view><text>{{myMessage}}</text></view>
+</form>
+</view>
